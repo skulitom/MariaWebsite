@@ -136,29 +136,28 @@ def cleanup_html(input_file, output_file, section_name):
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
         }
 
-        /* Ensure scaled text is visible and properly sized */
-        .sqsrte-scaled-text-container {
-            opacity: 1 !important;
-            visibility: visible !important;
+        /* Simple title styling */
+        .simple-title-wrapper {
+            display: block !important;
+            width: 100% !important;
         }
-        .sqsrte-scaled-text {
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: inline-block !important;
-        }
-        .sqsrte-scaled-text h1 {
-            font-size: 8vw !important;
+        .simple-title {
+            font-size: 10vw !important;
             line-height: 1.1 !important;
             margin: 0 !important;
+            padding: 0 !important;
+            color: #000000 !important;
+            font-weight: bold !important;
+            display: block !important;
         }
-        @media (min-width: 1200px) {
-            .sqsrte-scaled-text h1 {
-                font-size: 96px !important;
+        @media (min-width: 768px) {
+            .simple-title {
+                font-size: 8vw !important;
             }
         }
-        @media (max-width: 768px) {
-            .sqsrte-scaled-text h1 {
-                font-size: 12vw !important;
+        @media (min-width: 1200px) {
+            .simple-title {
+                font-size: 120px !important;
             }
         }
         '''
@@ -174,6 +173,26 @@ def cleanup_html(input_file, output_file, section_name):
                 html_tag['class'] = classes
             else:
                 del html_tag['class']
+
+    # Replace the complex Squarespace scaled-text with simple HTML
+    # Find the title block by its unique ID
+    title_block = soup.find('div', id='block-8d20fa4bb3eea7ba9cad')
+    if title_block:
+        # Find the sqs-block-content div
+        content_div = title_block.find('div', class_='sqs-block-content')
+        if content_div:
+            # Replace the entire content with simple HTML
+            content_div.clear()
+            # Create new simple structure
+            new_html = soup.new_tag('div', **{'class': 'simple-title-wrapper'})
+            h1_1 = soup.new_tag('h1', **{'class': 'simple-title'})
+            h1_1.string = 'MARIA GOUNDRY'
+            h1_2 = soup.new_tag('h1', **{'class': 'simple-title'})
+            h1_2.string = 'PORTFOLIO'
+            new_html.append(h1_1)
+            new_html.append(h1_2)
+            content_div.append(new_html)
+            print(f"  Replaced scaled-text with simple title HTML")
 
     # Write cleaned HTML
     with open(output_file, 'w', encoding='utf-8') as f:

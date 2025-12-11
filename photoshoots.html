@@ -87,29 +87,28 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
         }
 
-        /* Ensure scaled text is visible and properly sized */
-        .sqsrte-scaled-text-container {
-            opacity: 1 !important;
-            visibility: visible !important;
+        /* Simple title styling */
+        .simple-title-wrapper {
+            display: block !important;
+            width: 100% !important;
         }
-        .sqsrte-scaled-text {
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: inline-block !important;
-        }
-        .sqsrte-scaled-text h1 {
-            font-size: 8vw !important;
+        .simple-title {
+            font-size: 10vw !important;
             line-height: 1.1 !important;
             margin: 0 !important;
+            padding: 0 !important;
+            color: #000000 !important;
+            font-weight: bold !important;
+            display: block !important;
         }
-        @media (min-width: 1200px) {
-            .sqsrte-scaled-text h1 {
-                font-size: 96px !important;
+        @media (min-width: 768px) {
+            .simple-title {
+                font-size: 8vw !important;
             }
         }
-        @media (max-width: 768px) {
-            .sqsrte-scaled-text h1 {
-                font-size: 12vw !important;
+        @media (min-width: 1200px) {
+            .simple-title {
+                font-size: 120px !important;
             }
         }
   </style>
