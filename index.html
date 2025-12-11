@@ -171,16 +171,16 @@
             white-space: normal !important;
         }
 
-        /* FIX THE GRID INDENT - Force all text blocks to start at column 2 (left edge with gutter) */
-        .fe-block .sqs-block-html {
-            grid-column-start: 2 !important;
+        /* FIX THE GRID INDENT - Override parent block grid positioning */
+        /* Target ALL .fe-block-* elements (parent containers) */
+        [class*="fe-block-"] {
+            grid-column-start: 1 !important;
         }
 
-        /* On desktop, also start at column 2 */
-        @media (min-width: 768px) {
-            .fe-block .sqs-block-html {
-                grid-column-start: 2 !important;
-            }
+        /* More aggressive - target with element selector too */
+        div[class^="fe-block-"],
+        div[class*=" fe-block-"] {
+            grid-column-start: 1 !important;
         }
   </style>
  </head>
