@@ -116,8 +116,31 @@ def cleanup_html(input_file, output_file, section_name):
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
         }
 
-        /* Ensure scaled text is visible */
-        .sqsrte-scaled-text-container, .sqsrte-scaled-text { opacity: 1 !important; visibility: visible !important; }
+        /* Ensure scaled text is visible and properly sized */
+        .sqsrte-scaled-text-container {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .sqsrte-scaled-text {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: inline-block !important;
+        }
+        .sqsrte-scaled-text h1 {
+            font-size: 8vw !important;
+            line-height: 1.1 !important;
+            margin: 0 !important;
+        }
+        @media (min-width: 1200px) {
+            .sqsrte-scaled-text h1 {
+                font-size: 96px !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .sqsrte-scaled-text h1 {
+                font-size: 12vw !important;
+            }
+        }
         '''
         head.append(style)
 
