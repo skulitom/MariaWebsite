@@ -90,14 +90,23 @@ def cleanup_html(input_file, output_file, section_name):
             # Remove About Me link (404)
             a.parent.decompose() if a.parent else a.decompose()
 
-    # Add ONLY our red background override CSS at the end
+    # Add the downloaded Squarespace CSS files + red background override
     head = soup.find('head')
     if head:
-        # Add minimal override CSS for red background
+        # Add Squarespace static CSS (base styles)
+        link1 = soup.new_tag('link', rel='stylesheet', type='text/css', href='./css/squarespace-static.css')
+        head.append(link1)
+
+        # Add Squarespace site CSS (site-specific styles)
+        link2 = soup.new_tag('link', rel='stylesheet', type='text/css', href='./css/squarespace-site.css')
+        head.append(link2)
+
+        # Add red background override at the very end
         style = soup.new_tag('style')
         style.string = '''
         body { background-color: hsla(0, 97%, 55%, 1) !important; }
         .header-announcement-bar-wrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
+        #siteWrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
         '''
         head.append(style)
 
