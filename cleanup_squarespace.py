@@ -20,52 +20,58 @@ def cleanup_html(input_file, output_file, section_name):
 
     soup = BeautifulSoup(html, 'html.parser')
 
-    # Remove Squarespace scripts
+    # Remove ONLY external Squarespace scripts (keep inline styles!)
     for script in soup.find_all('script'):
-        # Keep only our custom navigation script
         src = script.get('src', '')
-        if 'squarespace' in src or 'typekit' in src:
-            script.decompose()
-        elif script.string and ('SQUARESPACE' in script.string or 'Static.' in script.string):
+        # Only remove external squarespace scripts, NOT inline styles or config
+        if src and ('squarespace' in src or 'typekit' in src):
             script.decompose()
 
-    # Remove Squarespace stylesheets
+    # Remove ONLY external Squarespace stylesheets (keep inline <style> blocks!)
     for link in soup.find_all('link'):
         try:
-            if link and link.get('rel') and 'stylesheet' in str(link.get('rel')):
-                href = link.get('href', '')
-                if 'squarespace' in href or 'typekit' in href:
-                    link.decompose()
+            href = link.get('href', '')
+            if href and ('squarespace' in href or 'typekit' in href):
+                link.decompose()
         except:
             continue
 
-    # Remove Squarespace meta tags
-    for meta in soup.find_all('meta'):
-        content = str(meta)
-        if 'squarespace' in content.lower():
-            meta.decompose()
+    # Keep Squarespace meta tags and config - they don't hurt and may be needed
 
     # Update image URLs to local paths
+    # First, get list of actual image files we have
+    images_dir = os.path.join(r'C:\DEV\MARIA\MARIA_WEBSITE\images', section_name)
+    available_images = {}
+    if os.path.exists(images_dir):
+        for img_file in os.listdir(images_dir):
+            # Strip section prefix to get original name
+            original_name = img_file.replace(f'{section_name}_', '')
+            available_images[original_name.lower()] = img_file
+
     for img in soup.find_all('img'):
         src = img.get('src', '')
         data_src = img.get('data-src', '')
 
         if 'squarespace-cdn.com' in src:
-            # Extract filename from URL
-            filename_match = re.search(r'/([^/]+\.(jpg|jpeg|png|gif|webp))', src, re.I)
+            # Extract filename from URL (last part before query params)
+            filename_match = re.search(r'/([^/\?]+\.(jpg|jpeg|png|gif|webp))', src, re.I)
             if filename_match:
                 filename = filename_match.group(1)
-                # Update to local path
-                img['src'] = f'./images/{section_name}/{section_name}_{filename}'
-                # Remove srcset to simplify
-                if img.get('srcset'):
-                    del img['srcset']
+                # Find matching local file
+                if filename.lower() in available_images:
+                    local_file = available_images[filename.lower()]
+                    img['src'] = f'./images/{section_name}/{local_file}'
+                    # Keep srcset but update it too
+                    if img.get('srcset'):
+                        del img['srcset']
 
         if 'squarespace-cdn.com' in data_src:
-            filename_match = re.search(r'/([^/]+\.(jpg|jpeg|png|gif|webp))', data_src, re.I)
+            filename_match = re.search(r'/([^/\?]+\.(jpg|jpeg|png|gif|webp))', data_src, re.I)
             if filename_match:
                 filename = filename_match.group(1)
-                img['data-src'] = f'./images/{section_name}/{section_name}_{filename}'
+                if filename.lower() in available_images:
+                    local_file = available_images[filename.lower()]
+                    img['data-src'] = f'./images/{section_name}/{local_file}'
 
     # Update navigation links
     for a in soup.find_all('a'):
@@ -84,18 +90,16 @@ def cleanup_html(input_file, output_file, section_name):
             # Remove About Me link (404)
             a.parent.decompose() if a.parent else a.decompose()
 
-    # Add our CSS files to head
+    # Add ONLY our red background override CSS at the end
     head = soup.find('head')
     if head:
-        # Add our custom CSS
-        css_files = ['main.css', 'header.css', 'footer.css', 'responsive.css']
-        for css_file in css_files:
-            link = soup.new_tag('link', rel='stylesheet', href=f'./css/{css_file}')
-            head.append(link)
-
-        # Add our navigation script
-        script = soup.new_tag('script', src='./js/navigation.js')
-        head.append(script)
+        # Add minimal override CSS for red background
+        style = soup.new_tag('style')
+        style.string = '''
+        body { background-color: hsla(0, 97%, 55%, 1) !important; }
+        .header-announcement-bar-wrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
+        '''
+        head.append(style)
 
     # Write cleaned HTML
     with open(output_file, 'w', encoding='utf-8') as f:
