@@ -77,6 +77,18 @@
         .header-announcement-bar-wrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
         #siteWrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
 
+        /* Fix fluid engine grid rows - CRITICAL for title display */
+        .fe-669bf0d974cc7c7290042175 {
+            grid-template-rows: repeat(31, minmax(24px, auto)) !important;
+        }
+        @media (min-width: 768px) {
+            .fe-669bf0d974cc7c7290042175 {
+                --row-height-scaling-factor: 0.0215;
+                --container-width: 100vw;
+                grid-template-rows: repeat(40, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto)) !important;
+            }
+        }
+
         /* Fix font loading - make text visible immediately with system fonts */
         html.wf-loading * { animation: none !important; color: inherit !important; }
         html { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important; }
