@@ -216,6 +216,18 @@ def cleanup_html(input_file, output_file, section_name):
         p[style*="white-space:pre-wrap"] {
             white-space: normal !important;
         }
+
+        /* FIX THE GRID INDENT - Force all text blocks to start at column 2 (left edge with gutter) */
+        .fe-block .sqs-block-html {
+            grid-column-start: 2 !important;
+        }
+
+        /* On desktop, also start at column 2 */
+        @media (min-width: 768px) {
+            .fe-block .sqs-block-html {
+                grid-column-start: 2 !important;
+            }
+        }
         '''
         head.append(style)
 
