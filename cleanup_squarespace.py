@@ -101,14 +101,36 @@ def cleanup_html(input_file, output_file, section_name):
         link2 = soup.new_tag('link', rel='stylesheet', type='text/css', href='./css/squarespace-site.css')
         head.append(link2)
 
-        # Add red background override at the very end
+        # Add critical CSS fixes at the very end
         style = soup.new_tag('style')
         style.string = '''
+        /* Red background override */
         body { background-color: hsla(0, 97%, 55%, 1) !important; }
         .header-announcement-bar-wrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
         #siteWrapper { background-color: hsla(0, 97%, 55%, 1) !important; }
+
+        /* Fix font loading - make text visible immediately with system fonts */
+        html.wf-loading * { animation: none !important; color: inherit !important; }
+        html { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important; }
+        body, p, h1, h2, h3, h4, h5, h6, span, div {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+        }
+
+        /* Ensure scaled text is visible */
+        .sqsrte-scaled-text-container, .sqsrte-scaled-text { opacity: 1 !important; visibility: visible !important; }
         '''
         head.append(style)
+
+    # Remove the wf-loading class from html tag to prevent text hiding
+    html_tag = soup.find('html')
+    if html_tag and html_tag.get('class'):
+        classes = html_tag.get('class', [])
+        if 'wf-loading' in classes:
+            classes.remove('wf-loading')
+            if classes:
+                html_tag['class'] = classes
+            else:
+                del html_tag['class']
 
     # Write cleaned HTML
     with open(output_file, 'w', encoding='utf-8') as f:
