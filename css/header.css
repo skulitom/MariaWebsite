@@ -9,7 +9,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: var(--header-padding-desktop) var(--page-padding);
+  padding: var(--header-vert-padding) var(--sqs-site-gutter);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: var(--max-width);
+  max-width: var(--sqs-site-max-width);
   margin: 0 auto;
 }
 
@@ -107,7 +107,7 @@
 /* Mobile Navigation */
 @media (max-width: 768px) {
   .site-header {
-    padding: var(--header-padding-mobile) var(--mobile-padding);
+    padding: var(--header-mobile-vert-padding) var(--sqs-mobile-site-gutter);
   }
 
   .site-title {

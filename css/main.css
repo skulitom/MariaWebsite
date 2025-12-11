@@ -6,16 +6,22 @@
   --color-text: #000000;
   --color-text-secondary: #333333;
 
-  /* Layout */
-  --max-width: 1800px;
+  /* Layout - Squarespace values */
+  --sqs-site-max-width: 1500px;
+  --sqs-site-gutter: 4vw;
+  --sqs-mobile-site-gutter: 6vw;
   --page-padding: 4vw;
   --mobile-padding: 6vw;
 
-  /* Header */
-  --header-logo-height-desktop: 50px;
-  --header-logo-height-mobile: 30px;
-  --header-padding-desktop: 2.2vw;
-  --header-padding-mobile: 6vw;
+  /* Header - Squarespace values */
+  --header-logo-height: 50px;
+  --header-mobile-logo-max-height: 30px;
+  --header-vert-padding: 2.2vw;
+  --header-mobile-vert-padding: 6vw;
+
+  /* Grid System */
+  --grid-gap: 12px;
+  --row-height-scaling-factor: 0.0215;
 }
 
 /* Reset & Base Styles */
@@ -90,13 +96,13 @@ img {
 
 /* Main Content */
 .main-content {
-  padding-top: calc(var(--header-logo-height-desktop) + var(--header-padding-desktop) * 2 + 2rem);
+  padding-top: calc(var(--header-logo-height) + var(--header-vert-padding) * 2 + 2rem);
   min-height: 100vh;
 }
 
 /* Page Container */
 .page-container {
-  max-width: var(--max-width);
+  max-width: var(--sqs-site-max-width);
   margin: 0 auto;
   padding: 0 var(--page-padding);
 }

@@ -2,7 +2,7 @@
 
 .site-footer {
   background: var(--color-bg);
-  padding: 4rem var(--page-padding);
+  padding: 4rem var(--sqs-site-gutter);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 6rem;
 }
@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3rem;
-  max-width: var(--max-width);
+  max-width: var(--sqs-site-max-width);
   margin: 0 auto;
 }
 
@@ -52,7 +52,7 @@
 /* Responsive Footer */
 @media (max-width: 768px) {
   .site-footer {
-    padding: 3rem var(--mobile-padding);
+    padding: 3rem var(--sqs-mobile-site-gutter);
   }
 
   .footer-content {

@@ -1,13 +1,14 @@
 /* Layout - Grid System */
 
-/* Image Grid Container */
+/* Image Grid Container - Squarespace Fluid Engine Grid */
 .image-grid {
   display: grid;
+  position: relative;
   grid-template-columns: repeat(24, 1fr);
-  gap: 10px;
-  max-width: var(--max-width);
+  gap: var(--grid-gap);
+  max-width: var(--sqs-site-max-width);
   margin: 0 auto;
-  padding: var(--page-padding);
+  padding: var(--sqs-site-gutter);
 }
 
 /* Grid Items */
@@ -78,9 +79,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: var(--max-width);
+  max-width: var(--sqs-site-max-width);
   margin: 0 auto;
-  padding: var(--page-padding);
+  padding: var(--sqs-site-gutter);
 }
 
 /* Project/Gallery Item */
@@ -111,13 +112,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  max-width: var(--max-width);
+  max-width: var(--sqs-site-max-width);
   margin: 0 auto;
-  padding: var(--page-padding);
-}
-
-.flex-item {
-  flex: 1 1 300px;
+  padding: var(--sqs-site-gutter);
 }
 
 /* Spacers */
