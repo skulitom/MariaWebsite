@@ -160,6 +160,62 @@ def cleanup_html(input_file, output_file, section_name):
                 font-size: 120px !important;
             }
         }
+
+        /* Fix text blocks z-index to appear above images */
+        .sqs-block-html,
+        .fe-block .sqs-block-html {
+            z-index: 100 !important;
+            position: relative !important;
+        }
+
+        /* Ensure all text elements are above images */
+        .sqs-block-html *,
+        .sqs-block-content *,
+        .sqs-html-content * {
+            position: relative !important;
+            z-index: 101 !important;
+        }
+
+        /* Images should be behind text */
+        .sqs-block-image,
+        .image-block {
+            z-index: 1 !important;
+        }
+
+        /* Fix text alignment - remove ALL padding/margin/indent */
+        .sqs-block-html .sqs-block-content,
+        .sqs-html-content,
+        .sqs-block-content,
+        div[class*="sqs"] {
+            text-align: left !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+            text-indent: 0 !important;
+        }
+
+        /* Remove indent from all text elements */
+        .sqs-block-html h1,
+        .sqs-block-html h2,
+        .sqs-block-html h3,
+        .sqs-block-html h4,
+        .sqs-block-html p,
+        .sqs-block-html a,
+        .sqs-html-content h1,
+        .sqs-html-content h2,
+        .sqs-html-content h3,
+        .sqs-html-content h4,
+        .sqs-html-content p,
+        .sqs-html-content a {
+            text-align: left !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+            text-indent: 0 !important;
+        }
+
+        /* Override any white-space pre-wrap that might cause indent */
+        p[style*="white-space:pre-wrap"] {
+            white-space: normal !important;
+        }
         '''
         head.append(style)
 
