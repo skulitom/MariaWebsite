@@ -26,6 +26,9 @@ def cleanup_html(input_file, output_file, section_name):
         # Only remove external squarespace scripts, NOT inline styles or config
         if src and ('squarespace' in src or 'typekit' in src):
             script.decompose()
+        # Also remove inline scripts that add wf-loading class
+        elif not src and script.string and 'wf-loading' in script.string:
+            script.decompose()
 
     # Remove ONLY external Squarespace stylesheets (keep inline <style> blocks!)
     for link in soup.find_all('link'):
@@ -35,6 +38,11 @@ def cleanup_html(input_file, output_file, section_name):
                 link.decompose()
         except:
             continue
+
+    # Remove inline styles that hide text with fonts-loading animation
+    for style in soup.find_all('style'):
+        if style.string and 'fonts-loading' in style.string:
+            style.decompose()
 
     # Keep Squarespace meta tags and config - they don't hurt and may be needed
 
