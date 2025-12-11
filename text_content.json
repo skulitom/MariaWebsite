@@ -1,0 +1,392 @@
+{
+  "home": [
+    {
+      "tag": "h1",
+      "text": "MARIA GOUNDRY"
+    },
+    {
+      "tag": "h1",
+      "text": "PORTFOLIO"
+    },
+    {
+      "tag": "p",
+      "text": "Welcome to My Digital Portfolio, here you can find my work from past projects, photoshoots of my designs, editorials in which my designs have been featured in and also a little bit more about me."
+    },
+    {
+      "tag": "h3",
+      "text": "CSM FASHION DESIGN PRINT SECOND YEAR"
+    },
+    {
+      "tag": "p",
+      "text": "→ About Maria"
+    },
+    {
+      "tag": "h3",
+      "text": "SECOND PLACE WINNER OF THE GRAYSON PERRY PROJECT"
+    },
+    {
+      "tag": "p",
+      "text": "Our last Second Year project at Csm consists of designing an Outfit for Grayson Perry. Our first client project, we have to design something that satisfies the brief and the requirements given to us by Grayson.At the end of the projects he performs in every outfit and chooses his top three."
+    },
+    {
+      "tag": "p",
+      "text": "→ View project"
+    },
+    {
+      "tag": "h2",
+      "text": "LATEST PHOTOSHOOTS"
+    },
+    {
+      "tag": "p",
+      "text": "Photoshoot at Cabaret Couture"
+    },
+    {
+      "tag": "p",
+      "text": "View Photoshoots"
+    },
+    {
+      "tag": "p",
+      "text": "I organised a photoshoot to shoot my garments from my first and second year at university.Shot by Martina Ferrari, Modelled by Ryle GoodChild. Videography By Lucy Shalders."
+    },
+    {
+      "tag": "p",
+      "text": "→ View Photoshoots"
+    },
+    {
+      "tag": "p",
+      "text": "EMAIL- @maria.goundry98@gmail.com"
+    },
+    {
+      "tag": "p",
+      "text": "INSTAGRAM"
+    },
+    {
+      "tag": "p",
+      "text": "NOT JUST A LABEL"
+    },
+    {
+      "tag": "p",
+      "text": "NEIGHBOURHOOD MAGAZINE"
+    }
+  ],
+  "projects": [
+    {
+      "tag": "h2",
+      "text": "THE TAILORING PROJECT (BaleNciaga project)2024"
+    },
+    {
+      "tag": "h3",
+      "text": "BA SECOND YEAR"
+    },
+    {
+      "tag": "h2",
+      "text": "THE TEAMS PROJECT 2023"
+    },
+    {
+      "tag": "h3",
+      "text": "BA Second Year"
+    },
+    {
+      "tag": "h2",
+      "text": "THE APRON PROJECT 2023"
+    },
+    {
+      "tag": "h3",
+      "text": "BA FIRST Year"
+    },
+    {
+      "tag": "h2",
+      "text": "THE CUTTING PROJECT 2023"
+    },
+    {
+      "tag": "h3",
+      "text": "BA FIRST YEAR"
+    },
+    {
+      "tag": "h2",
+      "text": "THE WHITE PROJECT 2022"
+    },
+    {
+      "tag": "h3",
+      "text": "BA FIRST YEAR"
+    },
+    {
+      "tag": "p",
+      "text": "EMAIL- @maria.goundry98@gmail.com"
+    },
+    {
+      "tag": "p",
+      "text": "INSTAGRAM"
+    },
+    {
+      "tag": "p",
+      "text": "NOT JUST A LABEL"
+    },
+    {
+      "tag": "p",
+      "text": "NEIGHBOURHOOD MAGAZINE"
+    }
+  ],
+  "photoshoots": [
+    {
+      "tag": "h2",
+      "text": "2024"
+    },
+    {
+      "tag": "p",
+      "text": "PRODUCTION @drawingcabaretcouture @dcc.studios"
+    },
+    {
+      "tag": "p",
+      "text": "PHOTOGRAPHER @amylauffer"
+    },
+    {
+      "tag": "p",
+      "text": "MODEL & HMUA @janetmayerofficial"
+    },
+    {
+      "tag": "p",
+      "text": "SET DESIGN @mgjlawrence"
+    },
+    {
+      "tag": "h2",
+      "text": "2024"
+    },
+    {
+      "tag": "p",
+      "text": "Photography - Martina Ferrari"
+    },
+    {
+      "tag": "p",
+      "text": "Model - Rylie Goodchild"
+    },
+    {
+      "tag": "h2",
+      "text": "2024"
+    },
+    {
+      "tag": "p",
+      "text": "Photography - @mcdtonia"
+    },
+    {
+      "tag": "p",
+      "text": "Styling - @karennn.gomez"
+    },
+    {
+      "tag": "p",
+      "text": "Styling Assist - @anahariyani"
+    },
+    {
+      "tag": "p",
+      "text": "Jewelry - @kellykatejewellery"
+    },
+    {
+      "tag": "p",
+      "text": "Models - @estmodels @agnesmbr @_hollywych"
+    },
+    {
+      "tag": "h2",
+      "text": "2024"
+    },
+    {
+      "tag": "h2",
+      "text": "2024"
+    },
+    {
+      "tag": "p",
+      "text": "Sho Madjozi"
+    },
+    {
+      "tag": "h2",
+      "text": "2023"
+    },
+    {
+      "tag": "p",
+      "text": "THE TEAMS PROJECT PHOTOSHOOT"
+    },
+    {
+      "tag": "p",
+      "text": "Other garment designed by Roni Isla"
+    },
+    {
+      "tag": "p",
+      "text": "My garment modelled by Daisy Day"
+    },
+    {
+      "tag": "p",
+      "text": "Photographed by Greta Konov"
+    },
+    {
+      "tag": "p",
+      "text": "Makeup by @mua.genie"
+    },
+    {
+      "tag": "h2",
+      "text": "2022"
+    },
+    {
+      "tag": "p",
+      "text": "THE WHITE SHOW PHOTOSHOOT"
+    },
+    {
+      "tag": "p",
+      "text": "EMAIL- @maria.goundry98@gmail.com"
+    },
+    {
+      "tag": "p",
+      "text": "INSTAGRAM"
+    },
+    {
+      "tag": "p",
+      "text": "NOT JUST A LABEL"
+    },
+    {
+      "tag": "p",
+      "text": "NEIGHBOURHOOD MAGAZINE"
+    }
+  ],
+  "press": [
+    {
+      "tag": "h2",
+      "text": "LAZIN JANUARY 2025 ISSUE"
+    },
+    {
+      "tag": "p",
+      "text": "https://lazin.uk"
+    },
+    {
+      "tag": "h2",
+      "text": "GLAM CULT"
+    },
+    {
+      "tag": "p",
+      "text": "https://www.glamcult.com/visual-essay/outland-joyland-a-visual-essay-by-alex-radota/"
+    },
+    {
+      "tag": "h2",
+      "text": "Whenwithyou ISSUE 009"
+    },
+    {
+      "tag": "p",
+      "text": "https://www.whenwithyou.com"
+    },
+    {
+      "tag": "h2",
+      "text": "LULA JAPAN"
+    },
+    {
+      "tag": "p",
+      "text": "https://lulamag.jp/encounter/fashion/lucho-davila/2024"
+    },
+    {
+      "tag": "h2",
+      "text": "OVERDUE MAGAZINE PRINT ISSUE 006"
+    },
+    {
+      "tag": "p",
+      "text": "https://overduemagazine.com"
+    },
+    {
+      "tag": "p",
+      "text": "EMAIL- @maria.goundry98@gmail.com"
+    },
+    {
+      "tag": "p",
+      "text": "INSTAGRAM"
+    },
+    {
+      "tag": "p",
+      "text": "NOT JUST A LABEL"
+    },
+    {
+      "tag": "p",
+      "text": "NEIGHBOURHOOD MAGAZINE"
+    }
+  ],
+  "press-loans": [
+    {
+      "tag": "h2",
+      "text": "LOOKS AVAILABLE TO BORROW"
+    },
+    {
+      "tag": "p",
+      "text": "Entire Look"
+    },
+    {
+      "tag": "p",
+      "text": "Neck Piece"
+    },
+    {
+      "tag": "p",
+      "text": "Shoulder Piece"
+    },
+    {
+      "tag": "p",
+      "text": "Bodysuit with attached gathered printed panels"
+    },
+    {
+      "tag": "p",
+      "text": "Entire Look"
+    },
+    {
+      "tag": "p",
+      "text": "Sleeves"
+    },
+    {
+      "tag": "p",
+      "text": "Top"
+    },
+    {
+      "tag": "p",
+      "text": "Skirt"
+    },
+    {
+      "tag": "p",
+      "text": "Jacket"
+    },
+    {
+      "tag": "p",
+      "text": "Dress"
+    },
+    {
+      "tag": "p",
+      "text": "Shirt"
+    },
+    {
+      "tag": "p",
+      "text": "Skirt"
+    },
+    {
+      "tag": "p",
+      "text": "Entire Look"
+    },
+    {
+      "tag": "p",
+      "text": "Shirt"
+    },
+    {
+      "tag": "p",
+      "text": "Two wrap skirts"
+    },
+    {
+      "tag": "p",
+      "text": "Skirt"
+    },
+    {
+      "tag": "p",
+      "text": "EMAIL- @maria.goundry98@gmail.com"
+    },
+    {
+      "tag": "p",
+      "text": "INSTAGRAM"
+    },
+    {
+      "tag": "p",
+      "text": "NOT JUST A LABEL"
+    },
+    {
+      "tag": "p",
+      "text": "NEIGHBOURHOOD MAGAZINE"
+    }
+  ]
+}
