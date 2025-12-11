@@ -217,17 +217,9 @@ def cleanup_html(input_file, output_file, section_name):
             white-space: normal !important;
         }
 
-        /* FIX THE GRID INDENT - Override parent block grid positioning */
-        /* Target ALL .fe-block-* elements (parent containers) */
-        [class*="fe-block-"] {
-            grid-column-start: 1 !important;
-        }
-
-        /* More aggressive - target with element selector too */
-        div[class^="fe-block-"],
-        div[class*=" fe-block-"] {
-            grid-column-start: 1 !important;
-        }
+        /* REMOVED: grid-column-start override - it broke the 2-column layout */
+        /* The layout intentionally positions text and images in different columns */
+        /* Forcing all blocks to column 1 caused text/image overlapping */
         '''
         head.append(style)
 
