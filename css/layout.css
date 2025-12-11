@@ -1,0 +1,134 @@
+/* Layout - Grid System */
+
+/* Image Grid Container */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 10px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+/* Grid Items */
+.grid-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Grid Item Sizes */
+.grid-item--full {
+  grid-column: span 24;
+}
+
+.grid-item--half {
+  grid-column: span 12;
+}
+
+.grid-item--third {
+  grid-column: span 8;
+}
+
+.grid-item--two-thirds {
+  grid-column: span 16;
+}
+
+.grid-item--quarter {
+  grid-column: span 6;
+}
+
+.grid-item--three-quarters {
+  grid-column: span 18;
+}
+
+/* Aspect Ratio Helpers */
+.aspect-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-3-2 {
+  aspect-ratio: 3 / 2;
+}
+
+.aspect-2-3 {
+  aspect-ratio: 2 / 3;
+}
+
+.aspect-3-4 {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+/* Content Grid (for text/mixed content) */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+/* Project/Gallery Item */
+.project-item,
+.gallery-item {
+  margin-bottom: 2rem;
+}
+
+.project-item img,
+.gallery-item img {
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Flexible Container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+.flex-item {
+  flex: 1 1 300px;
+}
+
+/* Spacers */
+.spacer-small {
+  height: 2rem;
+}
+
+.spacer-medium {
+  height: 4rem;
+}
+
+.spacer-large {
+  height: 6rem;
+}

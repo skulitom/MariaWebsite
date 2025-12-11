@@ -1,0 +1,163 @@
+/* Responsive Styles */
+
+/* Tablet and Below (≤ 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Main Content Mobile Padding */
+  .main-content {
+    padding-top: calc(var(--header-logo-height-mobile) + var(--header-padding-mobile) * 2 + 2rem);
+  }
+
+  .page-container {
+    padding: 0 var(--mobile-padding);
+  }
+
+  /* Image Grid Mobile */
+  .image-grid {
+    grid-template-columns: repeat(8, 1fr);
+    padding: var(--mobile-padding);
+    gap: 8px;
+  }
+
+  /* All grid items full width on mobile by default */
+  .grid-item--half,
+  .grid-item--third,
+  .grid-item--two-thirds,
+  .grid-item--quarter,
+  .grid-item--three-quarters {
+    grid-column: span 8;
+  }
+
+  /* Some items can be half-width on mobile */
+  .grid-item--mobile-half {
+    grid-column: span 4;
+  }
+
+  /* Content Grid Mobile */
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: var(--mobile-padding);
+  }
+
+  /* Flex Container Mobile */
+  .flex-container {
+    padding: var(--mobile-padding);
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  /* Spacers */
+  .spacer-small {
+    height: 1.5rem;
+  }
+
+  .spacer-medium {
+    height: 3rem;
+  }
+
+  .spacer-large {
+    height: 4rem;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .image-grid {
+    gap: 6px;
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop Specific (≥ 769px) */
+@media (min-width: 769px) {
+  /* Hover effects for desktop only */
+  .grid-item:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+
+  .project-item:hover img,
+  .gallery-item:hover img {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* Large Desktop (≥ 1440px) */
+@media (min-width: 1440px) {
+  :root {
+    font-size: 17px;
+  }
+}
+
+/* Extra Large Desktop (≥ 1920px) */
+@media (min-width: 1920px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .image-grid,
+  .content-grid,
+  .flex-container {
+    padding: var(--page-padding);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

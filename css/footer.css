@@ -1,0 +1,67 @@
+/* Footer */
+
+.site-footer {
+  background: var(--color-bg);
+  padding: 4rem var(--page-padding);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 6rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.footer-section a {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.footer-section a:hover {
+  opacity: 0.7;
+}
+
+/* Copyright */
+.footer-copyright {
+  text-align: center;
+  padding-top: 3rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 3rem var(--mobile-padding);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-copyright {
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+}
