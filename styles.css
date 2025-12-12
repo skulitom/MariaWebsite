@@ -1,0 +1,392 @@
+/* ========================================
+   Maria Goundry Portfolio - Clean Styles
+   ======================================== */
+
+/* ========== Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: hsla(0, 97%, 55%, 1);
+  color: #000;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+}
+
+/* ========== Typography ========== */
+h1 {
+  font-size: clamp(32px, 8vw, 80px);
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: clamp(20px, 4vw, 36px);
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ========== Navigation ========== */
+.main-nav {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 4px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 10px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ========== Hero Section (Home Page) ========== */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 0;
+}
+
+.hero-title {
+  font-size: clamp(40px, 10vw, 100px);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.hero-intro {
+  font-size: clamp(16px, 2vw, 20px);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* ========== Section Spacing ========== */
+section {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 40px;
+  }
+}
+
+/* ========== Home Sections ========== */
+.home-section {
+  margin-bottom: 60px;
+}
+
+.home-section h2 {
+  margin-bottom: 15px;
+}
+
+.home-section p {
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.section-preview {
+  margin-top: 20px;
+}
+
+/* ========== Press Items ========== */
+.press-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.press-item:last-child {
+  border-bottom: none;
+}
+
+.press-header {
+  margin-bottom: 10px;
+}
+
+.press-title {
+  margin-bottom: 10px;
+}
+
+.press-link {
+  font-weight: bold;
+  word-break: break-all;
+}
+
+@media (min-width: 768px) {
+  .press-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .press-header {
+    flex: 0 0 300px;
+    margin-right: 40px;
+  }
+
+  .press-gallery {
+    flex: 1;
+  }
+}
+
+/* ========== Project Sections ========== */
+.project-section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-section:last-child {
+  border-bottom: none;
+}
+
+.project-header {
+  margin-bottom: 20px;
+}
+
+.project-title {
+  margin-bottom: 5px;
+}
+
+.project-year {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+}
+
+/* ========== Photoshoot Sections ========== */
+.photoshoot-section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.photoshoot-section:last-child {
+  border-bottom: none;
+}
+
+.photoshoot-header {
+  margin-bottom: 20px;
+}
+
+.photoshoot-year {
+  margin-bottom: 10px;
+}
+
+.photoshoot-credits {
+  margin-bottom: 10px;
+}
+
+.photoshoot-credits p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* ========== Press Loans ========== */
+.press-loans-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.loan-item {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.loan-item:last-child {
+  border-bottom: none;
+}
+
+.loan-labels {
+  margin-bottom: 20px;
+}
+
+.loan-label {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+  margin: 5px 5px 5px 0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ========== Gallery Grids ========== */
+.press-gallery,
+.project-gallery,
+.photoshoot-gallery,
+.loan-gallery,
+.section-preview {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 column */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .press-gallery,
+  .project-gallery,
+  .photoshoot-gallery,
+  .loan-gallery,
+  .section-preview {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columns */
+    gap: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .press-gallery,
+  .project-gallery,
+  .photoshoot-gallery,
+  .loan-gallery,
+  .section-preview {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
+    gap: 30px;
+  }
+}
+
+/* ========== Images ========== */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Footer ========== */
+.main-footer {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.main-footer p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.main-footer a {
+  display: inline-block;
+  margin: 0 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .main-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
+
+  .main-footer a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* ========== Utility Classes ========== */
+.text-center {
+  text-align: center;
+}
+
+.mb-small {
+  margin-bottom: 20px;
+}
+
+.mb-medium {
+  margin-bottom: 40px;
+}
+
+.mb-large {
+  margin-bottom: 60px;
+}
